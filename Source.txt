@@ -1,0 +1,20 @@
+===Free SSH===
+http://boafanx.tabboa.com/free/
+http://www.saaee.com/shadowsocks
+https://www.shadowsocks.net/
+
+===Browser===
+chrome.exe --incognito --proxy-server=10.43.32.99:8888
+http://peter.sh/experiments/chromium-command-line-switches/
+
+===SSH CMD==
+ssh -o ProxyCommand="/usr/local/bin/corkscrew 10.67.14.7 80 %h %p" -qTfnN -v -D 0.0.0.0:1090 test@178.62.51.195 -p 1239
+ssh -o ProxyCommand="/usr/local/bin/connect -H 10.67.14.7:80 %h %p" -qTfnN -v -D 0.0.0.0:1090 test@178.62.51.195 -p 1239
+"D:\Program Files\putty\PUTTY.EXE" -ssh -D 0.0.0.0:1090 -N -C -pw "eyo3" test@178.62.51.195 -P 1239
+
+===Proxy Tool===
+connect
+corkscrew
+shadowsocks
+privoxy
+proxifier
