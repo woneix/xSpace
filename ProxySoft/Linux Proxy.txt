@@ -1,0 +1,39 @@
+===curl proxy===
+curl -x 10.10.10.99:8888 www.google.com
+
+
+===wget proxy===
+wget -Y on -e "http_proxy=http://10.10.10.99:8888" "www.google.com"
+
+
+===shell curl wget===
+http_proxy="http://10.10.10.99:8888"
+https_proxy=$http_proxy
+export http_proxy
+export https_proxy
+
+
+===git proxy===
+git config --global http.proxy http://10.10.10.99:8888
+git config --global https.proxy http://10.10.10.99:8888
+git config --global core.gitproxy /usr/local/bin/httpproxy
+
+cat ~/.gitconfig
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+git config --global --unset core.gitproxy
+
+vi /usr/local/bin/socks5proxy
+#!/bin/sh
+connect -S 10.10.10.252:7890 "$@"
+
+vi /usr/local/bin/httpproxy
+#!/bin/sh
+connect -H 10.10.10.99:8888 "$@"
+
+
+===yum proxy===
+vi /etc/yum.conf
+proxy=http://10.10.10.99:8888
+proxy_username=
+proxy_password=
