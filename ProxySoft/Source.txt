@@ -2,6 +2,7 @@
 http://boafanx.tabboa.com/free/
 http://www.saaee.com/shadowsocks
 https://www.shadowsocks.net/
+https://www.nitrous.io
 
 ===Browser===
 chrome.exe --incognito --proxy-server=10.10.10.99:8888
