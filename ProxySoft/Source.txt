@@ -18,4 +18,4 @@ connect
 corkscrew
 shadowsocks
 privoxy
-proxifier
+proxifier (PEZ2S-9WEM6-WB329-MJBKJ-W2B7W)
