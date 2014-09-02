@@ -37,3 +37,7 @@ vi /etc/yum.conf
 proxy=http://10.10.10.99:8888
 proxy_username=
 proxy_password=
+
+===subscription-manager===
+subscription-manager config --server.proxy_hostname=10.10.10.99 --server.proxy_port=8888 --server.proxy_user=admin --server.proxy_password=secret
+subscription-manager attach --pool=ff8080812bc382e3012bc3845ca000cb --proxy=10.10.10.99:8888 --proxyuser=jsmith --proxypassword=secret
