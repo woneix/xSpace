@@ -1,0 +1,58 @@
+tar -C /usr/local -xzvf /home/goversion/go1.3.1.linux-amd64.tar.gz
+
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+
+#TEST INSTALL
+vi hello.go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println("Hello World!")
+}
+
+$ go run hello.go
+
+
+#GO Workspaces
+mkdir -p /home/codego
+export GOPATH=/home/codego
+export PATH=$PATH:$GOPATH/bin
+mkdir -p $GOPATH/src/wonex.com/hello
+vi $GOPATH/src/wonex.com/hello/hello.go
+go install wonex.com/hello
+cd $GOPATH/src/wonex.com/hello
+go install 
+hello
+
+#GO library
+mkdir -p $GOPATH/src/wonex.com/cax
+vi $GOPATH/src/wonex.com/cax/cc.go
+package cax
+
+import "fmt"
+
+func Chello() {
+	fmt.Println("CAX HELLO!")
+}
+
+vi $GOPATH/src/wonex.com/hello/hello.go
+package main
+
+import (
+	"fmt"
+	"wonex.com/cax"
+)
+
+func main() {
+	fmt.Println("Hello World!")
+	cax.Chello()
+}
+
+cd $GOPATH
+go build wonex.com/cax
+go install wonex.com/hello

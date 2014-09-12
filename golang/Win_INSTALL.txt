@@ -1,0 +1,36 @@
+goenv.cmd
+@echo off
+
+setlocal
+set GOROOT=c:\go
+set GOARCH=amd64
+set GOOS=windows
+
+set GOPATH=E:\MyCodes\GO
+set GOBIN=%GOPATH%\bin
+set PATH=%GOROOT%\bin;%GOBIN%;%PATH%
+
+cd "%GOPATH%"
+CMD
+
+src/wonex.com/cax/cc.go
+package cax
+
+import "fmt"
+
+func Chello() {
+	fmt.Println("CAX HELLO!")
+}
+
+src/wonex.com/hello.go
+package main
+
+import (
+	"fmt"
+	"wonex.com/cax"
+)
+
+func main() {
+	fmt.Println("Hello World!")
+	cax.Chello()
+}
